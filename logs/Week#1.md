@@ -12,3 +12,9 @@ Another simple sorting algorithm, which looks for lowest value inside the list p
 
 *Implementation*: my understanding of the algorithm is that in every iteration, we look for the smallest number in the unsorted portion of the list and move it up to the front. So in the first step, the number at position 1 gets swapped with the lowest value which follows. In the next step, the number at position 2 gets swapped with the next lowest value and so on.
 
+### Day 2: Insertion Sort
+
+This simple sorting agorithm divides the input into sorted and unsorted region, inserting an element from unsorted region into the sorted one, one at a time. The worst case complexity is O(n^2)
+
+*Implementation*: my understanding is to consider an element from unsorted region, compare it with elements in the sorted region and swap places if the condition is met. As soon as the condition becomes false, it means that the element has reached its position for now. So stop and move on to the next element in unsorted region.
+
