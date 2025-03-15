@@ -18,3 +18,10 @@ This simple sorting agorithm divides the input into sorted and unsorted region, 
 
 *Implementation*: my understanding is to consider an element from unsorted region, compare it with elements in the sorted region and swap places if the condition is met. As soon as the condition becomes false, it means that the element has reached its position for now. So stop and move on to the next element in unsorted region.
 
+### Day 3: Merge Sort
+
+It is a general purpose, comparison sorting algorithm, which uses divide and conquer method. It has a time complexity of O(n logn)
+
+*Implementation*: my understanding is that the algorithm has two parts. The first one repetedly keeps dividing the array into halves, till only single element arrays remain. Then repeatedly merge elements into sorted sublists, till all elements form a single sorted array.
+
+*Learning*: using reccursion helps in tackling this problem easily. The function finds the mid point and calls the same function twice, with [left, mid] and [mid+1, right] as the next input. Then it compares the elements in the sublists starting from left, and modify the original array in its right position.
