@@ -8,7 +8,7 @@ def bubble_sort(numbers: list[int], reverse: bool = False) -> list[int]:
     for iteration in range(len(numbers) - 1):
         is_swapped = False
         for index in range(len(numbers) - 1 - iteration):
-            sign = -1 if reverse==True else 1
+            sign = -1 if reverse else 1
             if sign * numbers[index] > sign * numbers[index + 1]:
                 numbers[index], numbers[index + 1] = numbers[index + 1], numbers[index]
                 is_swapped = True
