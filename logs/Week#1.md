@@ -24,10 +24,22 @@ It is a general purpose, comparison sorting algorithm, which uses divide and con
 
 *Implementation*: my understanding is that the algorithm has two parts. The first one repetedly keeps dividing the array into halves, till only single element arrays remain. Then repeatedly merge elements into sorted sublists, till all elements form a single sorted array.
 
-*Learning*: using reccursion helps in tackling this problem easily. The function finds the mid point and calls the same function twice, with [left, mid] and [mid+1, right] as the next input. Then it compares the elements in the sublists starting from left, and modify the original array in its right position.
+*Learning*: using recursion helps in tackling this problem easily. The function finds the mid point and calls the same function twice, with [left, mid] and [mid+1, right] as the next input. Then it compares the elements in the sublists starting from left, and modify the original array in its right position.
 
 ### Day 5: Quick Sort
 
 It is an efficient, general purpose algorithm which is slightly faster than merge sort and heap sort. The algorithm employs divide and conquer method, and has average complexity of O(n logn) and worst case complexity of O(n^2)
 
-*Implementation*: my understanding is that the procedure revolves around something called as a pivot element. This element is randomly chosen. The numbers less than pivot element are arranged on the left side and the others on the right side (ascending sort) with pivot element in the middle. Then both left and right arrays (excluding the pivot element) are fed reccursively into the sorting algorithm. Whenever left limit value becomes greater or equal to right limit value (in case of single element left in sub-arrays), the algorithm stops.
+*Implementation*: my understanding is that the procedure revolves around something called as a pivot element. This element is randomly chosen. The numbers less than pivot element are arranged on the left side and the others on the right side (ascending sort) with pivot element in the middle. Then both left and right arrays (excluding the pivot element) are fed recursively into the sorting algorithm. Whenever left limit value becomes greater or equal to right limit value (in case of single element left in sub-arrays), the algorithm stops.
+
+### Day 6: Heap Sort
+
+This is a comparison based sorting algorithm, which uses a binary heap data structure to sort elements in an array. The worst case complexity is O(n logn).
+
+*Implementation*: my understanding is that the algorithm runs in two phases.
+
+In the first phase, we build a max heap from given random array. Now the question arises, "What is a valid Max Heap?" In a valid max heap, the value of each parent node is greater than or equal to the value of its children. That means the root element is always the largest element in the heap.
+
+In the second phase, we do the actual sorting. We already know that the max heap from phase 1 has the largest element on the top. We move it to the last position in the array. Now, we have to re-heap the (1, .., n-1) elements, so that the next largest element is at the top of the heap. So we call heapify function again. And this will go on from indices n to 1, till teh entire list is sorted.
+
+*Learning*: in order to create a binary tree from an array, for any index *i*, the child nodes will always be *2 x i + 1* and *2 x i + 2*
