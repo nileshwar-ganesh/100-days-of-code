@@ -43,3 +43,11 @@ In the first phase, we build a max heap from given random array. Now the questio
 In the second phase, we do the actual sorting. We already know that the max heap from phase 1 has the largest element on the top. We move it to the last position in the array. Now, we have to re-heap the (1, .., n-1) elements, so that the next largest element is at the top of the heap. So we call heapify function again. And this will go on from indices n to 1, till teh entire list is sorted.
 
 *Learning*: in order to create a binary tree from an array, for any index *i*, the child nodes will always be *2 x i + 1* and *2 x i + 2*
+
+### Day 7: Radix Sort
+
+A non-comparative sorting algorithm that sorts data by grouping keys based on individual digits, which share the same significant position. This algorithm requires extra space for sorting, as it is not in-place sorting algorithm. The time complexity is O(n logM), where M is the maximum value present in the list.
+
+*Implementation*: my understanding is that this algorithm employs modified version of another algorithm (counting sort) as a sub-routine. Counting sort sub-routine basically follows following step: keep track of count of digits (0-9) appearing in the same significant position, create a cumulative sum (from front or rear, based on sort order) and then sort the numbers based on cumulative sum. The algorithm runs this routine for d iterations, where d is number of digits present in the number with maximum value.
+
+*Learning*: radix sort does not handle negative numbers. A workaround is to separate negative and positive numbers initially and then run the radix sort separately on both lists. And then, combine both results at the end to get the final result.
