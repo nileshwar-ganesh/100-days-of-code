@@ -11,3 +11,9 @@ This algorithm is derived from merge sort and insertion sort. It takes advantage
 A simple searching algorithm that sequentially checks each element in a list or array until a match is found or the entire list has been searched. The worst case complexity is O(n)
 
 *Implementation*: the implementation is straight forward. Go through the list, starting from teh first element. If the element is found, return the index. If teh end of the list is reached and the element is not found, return -1 (not found)
+
+### Day 10: Binary Search
+
+An effiient searching algorithm, which works by repeatedly dividing the search range in half. It can only be used on sorted arrays. The complexity of search is O(logn). When coupled with a sorting algorithm, the complexity becomes O(n logn).
+
+*Implementation*: it follows these steps - find middle element, and if they match return the found status/index. If target is smaller, search left half. Else, search right half. Repeat until element is found or the range is exhausted.
