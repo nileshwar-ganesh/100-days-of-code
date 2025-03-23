@@ -22,4 +22,10 @@ An effiient searching algorithm, which works by repeatedly dividing the search r
 
 An efficient searching algorithm designed for sorted arrays. It strikes a balance between linear search and binary search. The worst case complexity is O(sqrt(n)).
 
-*Implementation*: the jump length is given by square root of total number of elements. In every iteration we tale elements in batches of sqrt(n) elements. If the last element is less than the key value, we jump to next batch of sqrt(n) elements. Once we find the right batch, we conduct a linear search within it, to check for the element.
+*Implementation*: the jump length is given by square root of total number of elements. In every iteration we take elements in batches of sqrt(n) elements. If the last element is less than the key value, we jump to next batch of sqrt(n) elements. Once we find the right batch, we conduct a linear search within it, to check for the element.
+
+### Day 12: Median of Two Sorted Arrays problem
+
+*Problem Statement*: Given two sorted arrays of sizes m and n, find the median of the combined sorted array without fully merging them. Time complexity is O(log(min(m, n))).
+
+*Implementation*: perform binary search on smaller array. Partition both arrays, such that left half contains smaller elements and then compute the median.
